@@ -18,9 +18,6 @@ public class TaskerWidgetViewFactory extends AbstractPrepareViewFactory {
 
     private AppInfo appInfo;
 
-    /**
-     * The Tasker widget controller.
-     */
     private TaskerWidgetController taskerWidgetController;
 
     /**
@@ -54,4 +51,12 @@ public class TaskerWidgetViewFactory extends AbstractPrepareViewFactory {
         this.taskerWidgetController.addTask(task);
     }
 
+    /**
+     * Gets tasker widget controller.
+     *
+     * @return the tasker widget controller
+     */
+    public TaskerWidgetController getTaskerWidgetController() {
+        return taskerWidgetController;
+    }
 }
