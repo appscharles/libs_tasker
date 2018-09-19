@@ -20,4 +20,11 @@ public class _20_PanesControllerExtend extends _12_AppInfoControllerExtend {
 
     protected Consumer<Pane> consumerContainerPane;
 
+    protected _20_PanesControllerExtend() {
+        this.addOnInitializeWithSneakyThrow(() -> {
+            if (this.consumerContainerPane != null){
+                this.consumerContainerPane.accept(this.containerPane);
+            }
+        });
+    }
 }
