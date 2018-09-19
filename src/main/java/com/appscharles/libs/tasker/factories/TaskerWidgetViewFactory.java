@@ -21,7 +21,7 @@ public class TaskerWidgetViewFactory extends AbstractPrepareViewFactory {
     /**
      * The Tasker widget controller.
      */
-    TaskerWidgetController taskerWidgetController;
+    private TaskerWidgetController taskerWidgetController;
 
     /**
      * Instantiates a new Tasker widget view factory.
@@ -53,4 +53,5 @@ public class TaskerWidgetViewFactory extends AbstractPrepareViewFactory {
     public void addTask(Task task){
         this.taskerWidgetController.addTask(task);
     }
+
 }

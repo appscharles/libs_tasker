@@ -4,6 +4,7 @@ package com.appscharles.libs.tasker.guis.widget;
 import com.appscharles.libs.tasker.guis.widget.controllerExtend._35_TasksControllerExtend;
 import com.appscharles.libs.tasker.models.AppInfo;
 import com.appscharles.libs.tasker.models.Task;
+import javafx.scene.layout.Pane;
 
 import java.util.List;
 import java.util.function.Consumer;
@@ -39,5 +40,14 @@ public class TaskerWidgetController extends _35_TasksControllerExtend {
      */
     public void defaultTasks(Consumer<List<Task>> defaultTasks) {
         this.defaultTasks = defaultTasks;
+    }
+
+    /**
+     * Container pane.
+     *
+     * @param consumerContainerPane the consumer container pane
+     */
+    public void containerPane(Consumer<Pane> consumerContainerPane){
+        this.consumerContainerPane = consumerContainerPane;
     }
 }
