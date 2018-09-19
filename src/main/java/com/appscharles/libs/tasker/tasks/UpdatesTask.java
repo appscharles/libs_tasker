@@ -51,7 +51,7 @@ public class UpdatesTask extends AbstractTaskAsynchonizer {
         this.setScheduledFuturePeriod(60);
         this.setTimeUnit(TimeUnit.SECONDS);
         this.statusUpdatesTask = new SimpleObjectProperty<>(StatusUpdatesTask.NO_UPDATES);
-        this.resourceBundle = ResourceBundle.getBundle("com/appscharles/apps/stocker/taskers/translations/Updates", new UTF8Control());
+        this.resourceBundle = ResourceBundle.getBundle("com/appscharles/libs/tasker/translations/Updates", new UTF8Control());
     }
 
     @Override

@@ -6,7 +6,6 @@ import com.appscharles.libs.fxer.sneakers.ExceptionDialogThrowSneaker;
 import com.appscharles.libs.tasker.builders.LogsButtonBuilder;
 import com.appscharles.libs.tasker.exceptions.TaskerException;
 import com.appscharles.libs.tasker.managers.AbstractWidgetsManager;
-import com.appscharles.libs.tasker.models.AppInfo;
 import com.appscharles.libs.tasker.tasks.LogsTask;
 import javafx.scene.control.Button;
 import javafx.scene.control.Tooltip;
@@ -20,22 +19,19 @@ public class LogsWidget extends AbstractWidgetsManager<LogsTask> {
 
     private Button button;
 
-    private AppInfo appInfo;
 
     /**
      * Instantiates a new Logs widget.
      *
      * @param widgetsPane the widgets pane
-     * @param appInfo     the app info
      */
-    public LogsWidget(Pane widgetsPane, AppInfo appInfo) {
+    public LogsWidget(Pane widgetsPane) {
         super(widgetsPane, "com/appscharles/libs/tasker/translations/Logs");
-        this.appInfo = appInfo;
     }
 
     @Override
     public void initialize() {
-        this.button = LogsButtonBuilder.create(this.appInfo.getOnOpenLogsPopup()).build();
+        this.button = LogsButtonBuilder.create(this.task.getAppInfo().getOnOpenLogsPopup()).build();
         this.button.getStyleClass().add("light_red_theme");
         this.button.setTooltip(new Tooltip(this.resourceBundle.getString("view.button.tooltip.check_errors")));
         ExceptionDialogThrowSneaker.sneaky(()->{

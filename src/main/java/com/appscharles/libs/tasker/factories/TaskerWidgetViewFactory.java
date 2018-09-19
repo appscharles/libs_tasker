@@ -35,8 +35,8 @@ public class TaskerWidgetViewFactory extends AbstractPrepareViewFactory {
 
     public Parent create() throws FxerException {
         try {
-            FxView fxView = new FxViewFactory("/com/appscharles/apps/stocker/mains/guis/tasker/TaskerWidgetView.fxml",
-                    "com/appscharles/apps/stocker/mains/guis/tasker/translations/TaskerWidget", this.taskerWidgetController, this.fXStage)
+            FxView fxView = new FxViewFactory("/com/appscharles/libs/tasker/guis/widget/TaskerWidgetView.fxml",
+                    "com/appscharles/libs/tasker/guis/widget/translations/TaskerWidget", this.taskerWidgetController, this.fXStage)
                     .addStylesheet("com/appscharles/libs/fxer/guis/commons/styles/Buttons.css")
                     .create();
             return fxView.createView();
@@ -51,6 +51,6 @@ public class TaskerWidgetViewFactory extends AbstractPrepareViewFactory {
      * @param task the task
      */
     public void addTask(Task task){
-        this.taskerWidgetController.getTasks().add(task);
+        this.taskerWidgetController.addTask(task);
     }
 }

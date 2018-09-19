@@ -4,6 +4,7 @@ import com.appscharles.libs.databaser.exceptions.DatabaserException;
 import com.appscharles.libs.logger.repositories.LogRepository;
 import com.appscharles.libs.tasker.configurations.LogsConfiguration;
 import com.appscharles.libs.tasker.executables.AbstractTaskAsynchonizer;
+import com.appscharles.libs.tasker.models.AppInfo;
 import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.SimpleBooleanProperty;
 
@@ -16,11 +17,13 @@ public class LogsTask extends AbstractTaskAsynchonizer {
 
     private BooleanProperty errorProperty;
 
+    private AppInfo appInfo;
 
     /**
      * Instantiates a new Logs task.
      */
-    public LogsTask(){
+    public LogsTask(AppInfo appInfo){
+        this.appInfo = appInfo;
         this.setScheduledFuturePeriod(5);
         this.setTimeUnit(TimeUnit.SECONDS);
         this.errorProperty = new SimpleBooleanProperty(false);
@@ -42,5 +45,14 @@ public class LogsTask extends AbstractTaskAsynchonizer {
      */
     public BooleanProperty errorProperty() {
         return this.errorProperty;
+    }
+
+    /**
+     * Getter for property 'appInfo'.
+     *
+     * @return Value for property 'appInfo'.
+     */
+    public AppInfo getAppInfo() {
+        return appInfo;
     }
 }

@@ -6,6 +6,7 @@ import com.appscharles.libs.tasker.models.AppInfo;
 import com.appscharles.libs.tasker.models.Task;
 
 import java.util.List;
+import java.util.function.Consumer;
 
 /**
  * The type Tasker widget controller.
@@ -13,16 +14,30 @@ import java.util.List;
 public class TaskerWidgetController extends _35_TasksControllerExtend {
 
 
+    /**
+     * Instantiates a new Tasker widget controller.
+     *
+     * @param appInfo the app info
+     */
     public TaskerWidgetController(AppInfo appInfo) {
         this.appInfo = appInfo;
     }
 
     /**
-     * Gets tasks.
+     * Add task.
      *
-     * @return the tasks
+     * @param task the task
      */
-    public List<Task> getTasks() {
-        return this.tasks;
+    public void addTask(Task task) {
+        this.outTasks.add(task);
+    }
+
+    /**
+     * Default tasks.
+     *
+     * @param defaultTasks the default tasks
+     */
+    public void defaultTasks(Consumer<List<Task>> defaultTasks) {
+        this.defaultTasks = defaultTasks;
     }
 }
