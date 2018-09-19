@@ -37,7 +37,7 @@ public class UpdatesWidget extends AbstractWidgetsManager<UpdatesTask> {
      * @param widgetsPane the widgets pane
      */
     public UpdatesWidget(Pane widgetsPane) {
-        super(widgetsPane, "com/appscharles/apps/stocker/taskers/translations/Updates");
+        super(widgetsPane, "com/appscharles/libs/tasker/translations/Updates");
     }
 
     @Override

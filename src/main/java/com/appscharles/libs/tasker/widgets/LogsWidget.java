@@ -29,7 +29,7 @@ public class LogsWidget extends AbstractWidgetsManager<LogsTask> {
      * @param appInfo     the app info
      */
     public LogsWidget(Pane widgetsPane, AppInfo appInfo) {
-        super(widgetsPane, "com/appscharles/apps/stocker/taskers/translations/Logs");
+        super(widgetsPane, "com/appscharles/libs/tasker/translations/Logs");
         this.appInfo = appInfo;
     }
 
