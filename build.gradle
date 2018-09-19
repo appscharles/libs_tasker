@@ -19,10 +19,17 @@ repositories {
     maven {
         url 'http://dl.bintray.com/appscharles/libs'
     }
+    maven {
+        url 'http://repo.novus.com/releases'
+    }
     mavenLocal()
 }
 
 dependencies {
+    compile group: 'com.appscharles.libs', name: 'updater', version: '1.0.0.0-dev13'
+    compile group: 'com.appscharles.libs', name: 'databaser', version: '1.0.0.0-dev24'
+    compile group: 'com.appscharles.libs', name: 'logger', version: '1.0.0.0-dev21'
+    compile group: 'com.appscharles.libs', name: 'fxer', version: '1.0.0.0-dev46'
     testCompile group: 'org.junit.jupiter', name: 'junit-jupiter-engine', version: '5.3.1'
     testCompile group: 'org.junit.jupiter', name: 'junit-jupiter-api', version: '5.3.1'
 }
