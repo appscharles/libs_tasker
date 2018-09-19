@@ -61,6 +61,9 @@ public class _35_TasksControllerExtend extends _20_PanesControllerExtend {
          });
         this.addOnShownWithSneakyThrow(() -> {
             this.tasksExecutor.start();
+            if (this.consumerContainerPane != null){
+                this.consumerContainerPane.accept(this.containerPane);
+            }
         });
         this.addOnCloseWithSneakyThrow(() -> {
             this.tasksExecutor.stop();
