@@ -14,9 +14,9 @@ import java.util.ResourceBundle;
 public abstract class AbstractWidgetsManager<T> implements IWidgetsManager {
 
     /**
-     * The Widgets pane.
+     * The Container pane.
      */
-    protected Pane widgetsPane;
+    protected Pane containerPane;
 
     /**
      * The Resource bundle.
@@ -31,16 +31,19 @@ public abstract class AbstractWidgetsManager<T> implements IWidgetsManager {
     /**
      * Instantiates a new Abstract widgets manager.
      *
-     * @param widgetsPane          the widgets pane
      * @param resourceTranslations the resource translations
      */
-    public AbstractWidgetsManager(Pane widgetsPane, String resourceTranslations) {
+    public AbstractWidgetsManager(String resourceTranslations) {
         this.resourceBundle = ResourceBundle.getBundle(resourceTranslations, new UTF8Control());
-        this.widgetsPane = widgetsPane;
     }
 
     @Override
     public void setTask(ITaskExecutable task) {
         this.task = (T) task;
+    }
+
+    @Override
+    public void setContainerPane(Pane containerPane) {
+        this.containerPane = containerPane;
     }
 }

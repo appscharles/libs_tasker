@@ -44,17 +44,18 @@ public class _35_TasksControllerExtend extends _20_PanesControllerExtend {
         this.outTasks = Lists.newArrayList();
         this.addOnInitializeWithSneakyThrow(() -> {
             this.tasks = Lists.newArrayList(
-                    new Task(LogsConfiguration.getTaskId(), new LogsTask(this.appInfo), new LogsWidget(this.containerPane)),
-                    new Task(UpdatesConfiguration.getTaskId(), new UpdatesTask(this.appInfo), new UpdatesWidget(this.containerPane))
+                    new Task(LogsConfiguration.getTaskId(), new LogsTask(this.appInfo), new LogsWidget()),
+                    new Task(UpdatesConfiguration.getTaskId(), new UpdatesTask(this.appInfo), new UpdatesWidget())
             );
             if (this.defaultTasks != null){
                 this.defaultTasks.accept(this.tasks);
             }
             this.tasksExecutor = new TasksExecutor();
+            this.tasks.addAll(this.outTasks);
             for (Task task : this.tasks) {
-                this.tasksExecutor.addTask(task);
-            }
-            for (Task task : this.outTasks) {
+                if (task.getWidgetsPaneManager() != null){
+                    task.getWidgetsPaneManager().setContainerPane(this.containerPane);
+                }
                 this.tasksExecutor.addTask(task);
             }
          });

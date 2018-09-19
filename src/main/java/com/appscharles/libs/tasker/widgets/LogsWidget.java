@@ -25,8 +25,8 @@ public class LogsWidget extends AbstractWidgetsManager<LogsTask> {
      *
      * @param widgetsPane the widgets pane
      */
-    public LogsWidget(Pane widgetsPane) {
-        super(widgetsPane, "com/appscharles/libs/tasker/translations/Logs");
+    public LogsWidget() {
+        super("com/appscharles/libs/tasker/translations/Logs");
     }
 
     @Override
@@ -36,7 +36,7 @@ public class LogsWidget extends AbstractWidgetsManager<LogsTask> {
         this.button.setTooltip(new Tooltip(this.resourceBundle.getString("view.button.tooltip.check_errors")));
         ExceptionDialogThrowSneaker.sneaky(()->{
             new ThreadPlatform<TaskerException>().runAndWait(() -> {
-                ChildrenPaneOrderAdder.addIfNotContains(this.widgetsPane, this.button, this.task.getWidgetOrder());
+                ChildrenPaneOrderAdder.addIfNotContains(this.containerPane, this.button, this.task.getWidgetOrder());
             });
         });
         this.button.visibleProperty().bind(this.task.errorProperty());

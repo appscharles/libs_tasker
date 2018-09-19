@@ -16,7 +16,6 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.control.Button;
 import javafx.scene.control.Tooltip;
-import javafx.scene.layout.Pane;
 
 import java.io.File;
 import java.nio.file.Files;
@@ -33,11 +32,9 @@ public class UpdatesWidget extends AbstractWidgetsManager<UpdatesTask> {
 
     /**
      * Instantiates a new Updates widget.
-     *
-     * @param widgetsPane the widgets pane
      */
-    public UpdatesWidget(Pane widgetsPane) {
-        super(widgetsPane, "com/appscharles/libs/tasker/translations/Updates");
+    public UpdatesWidget() {
+        super("com/appscharles/libs/tasker/translations/Updates");
     }
 
     @Override
@@ -45,7 +42,7 @@ public class UpdatesWidget extends AbstractWidgetsManager<UpdatesTask> {
         this.button = UpdatesButtonBuilder.create().build();
         ExceptionDialogThrowSneaker.sneaky(() -> {
             new ThreadPlatform<TaskerException>().runAndWait(() -> {
-                ChildrenPaneOrderAdder.addIfNotContains(this.widgetsPane, this.button, this.task.getWidgetOrder());
+                ChildrenPaneOrderAdder.addIfNotContains(this.containerPane, this.button, this.task.getWidgetOrder());
             });
         });
         ButtonHidder.hide(this.button);
