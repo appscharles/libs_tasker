@@ -5,7 +5,7 @@ plugins {
 }
 
 group 'com.appscharles.libs'
-version '1.0.0.0-dev10'
+version '1.0.0.0-dev11'
 
 sourceCompatibility = 1.8
 
@@ -29,7 +29,7 @@ dependencies {
     compile group: 'com.appscharles.libs', name: 'updater', version: '1.0.0.0-dev13'
     compile group: 'com.appscharles.libs', name: 'databaser', version: '1.0.0.0-dev24'
     compile group: 'com.appscharles.libs', name: 'logger', version: '1.0.0.0-dev21'
-    compile group: 'com.appscharles.libs', name: 'fxer', version: '1.0.0.0-dev46'
+    compile group: 'com.appscharles.libs', name: 'fxer', version: '1.0.0.0-dev47'
     testCompile group: 'org.junit.jupiter', name: 'junit-jupiter-engine', version: '5.3.1'
     testCompile group: 'org.junit.jupiter', name: 'junit-jupiter-api', version: '5.3.1'
 }

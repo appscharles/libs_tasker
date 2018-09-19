@@ -1,6 +1,7 @@
 package com.appscharles.libs.tasker.guis.widget.controllerExtend;
 
 
+import com.appscharles.libs.fxer.hidders.PaneAutoHidder;
 import javafx.fxml.FXML;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
@@ -22,6 +23,7 @@ public class _20_PanesControllerExtend extends _12_AppInfoControllerExtend {
 
     protected _20_PanesControllerExtend() {
         this.addOnInitializeWithSneakyThrow(() -> {
+            PaneAutoHidder.autoHide(this.containerPane);
             if (this.consumerContainerPane != null){
                 this.consumerContainerPane.accept(this.containerPane);
             }
