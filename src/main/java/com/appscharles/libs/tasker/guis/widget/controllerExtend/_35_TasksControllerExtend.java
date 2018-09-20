@@ -1,7 +1,6 @@
 package com.appscharles.libs.tasker.guis.widget.controllerExtend;
 
 
-import com.appscharles.libs.fxer.hidders.PaneAutoHidder;
 import com.appscharles.libs.tasker.configurations.LogsConfiguration;
 import com.appscharles.libs.tasker.configurations.UpdatesConfiguration;
 import com.appscharles.libs.tasker.executors.ITasksExecutor;
@@ -44,7 +43,6 @@ public class _35_TasksControllerExtend extends _20_PanesControllerExtend {
     protected _35_TasksControllerExtend() {
         this.outTasks = Lists.newArrayList();
         this.addOnInitializeWithSneakyThrow(() -> {
-            PaneAutoHidder.autoHide(this.containerPane);
             this.tasks = Lists.newArrayList(
                     new Task(LogsConfiguration.getTaskId(), new LogsTask(this.appInfo), new LogsWidget()),
                     new Task(UpdatesConfiguration.getTaskId(), new UpdatesTask(this.appInfo), new UpdatesWidget())
